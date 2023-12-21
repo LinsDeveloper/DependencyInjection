@@ -36,7 +36,7 @@ public class OrderController : ControllerBase
         var cupon = await _promoCodeRepository.GetPromoCodeAsync(promoCode);
         var discount = cupon?.Value ?? 0M;
         var order = new Order(deliveryFee, discount, new List<Product>());
-        return Ok($"Pedido {order.Code} gerado com sucesso!");  
+        return Ok($"Pedido {order.Code} foi gerado com sucesso!");  
 
     }
 }
