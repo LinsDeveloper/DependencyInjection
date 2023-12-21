@@ -17,7 +17,7 @@ public class CustomerRepository : ICustomerRepository
     }
     public async Task<Customer?> GetByIdAsync(string customerId)
     {
-        const string query = "SELECT [Id], [Name], [Email] FROM CUSTOMER WHERE ID=@id";
+        var query = "SELECT [Id], [Name], [Email] FROM CUSTOMER WHERE ID=@id";
         return await _connection.QueryFirstOrDefaultAsync<Customer>(query, new 
             { 
                 id = customerId 
